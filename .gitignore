@@ -39,4 +39,4 @@ out/
 ### JTE ###
 /jte-classes/
 
-db.sqlite
+db.sqlite*

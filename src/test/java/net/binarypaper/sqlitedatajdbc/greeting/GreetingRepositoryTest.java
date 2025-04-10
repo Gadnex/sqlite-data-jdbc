@@ -48,4 +48,14 @@ class GreetingRepositoryTest {
     Iterable<Greeting> greetings = greetingRepository.findAll();
     assertEquals(10, StreamSupport.stream(greetings.spliterator(), false).count());
   }
+
+  @Test
+  void findByMessage() {
+    Greeting greeting = greetingRepository.findByMessage("Hello World");
+    assertNull(greeting);
+    greeting = greetingRepository.findByMessage("Greeting 10");
+    assertNotNull(greeting);
+    assertEquals(10, greeting.id());
+    assertEquals("Greeting 10", greeting.message());
+  }
 }

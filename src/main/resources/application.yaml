@@ -6,6 +6,8 @@ spring:
       enabled: true
   datasource:
     url: jdbc:sqlite:db.sqlite
+    hikari:
+      connection-init-sql: PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL; PRAGMA cache_size=-10000; PRAGMA temp_store=MEMORY;
 
 server:
   port: 8080
